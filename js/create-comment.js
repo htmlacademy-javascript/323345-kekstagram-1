@@ -97,8 +97,8 @@ function onModalOpen (evt) {
     moreCommentsBtn.addEventListener('click', () => {
 
       item += STEP;
-      commentsPartOne = newCommentList.slice(item, item + STEP);
-      commentShowSum += commentsPartOne.length;
+      commentsPartOne = newCommentList.slice(0, item + STEP);
+      commentShowSum += newCommentList.slice(item, item + STEP).length;
 
       moreCommentsBtn.classList.remove('visually-hidden');
       if (commentShowSum >= dataBaseCommentsLength) {
